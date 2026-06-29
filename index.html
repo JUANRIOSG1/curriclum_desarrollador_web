@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV - Juan José Ríos Gangas">
+    <title id="page-title">Juan José Ríos Gangas | CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-glow-bar"></div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="brand-logo">
+                <img src="logo_jjrg.png" alt="Logo JJRG" class="logo-image">
+                <span class="logo-text" id="logo-name">Juan Jose</span></span>
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="#about-section" class="nav-link">Sobre Mí</a>
+                <a href="#projects-section" class="nav-link">Proyectos</a>
+                <a href="#studies-section" class="nav-link">Estudios</a>
+                <a href="#skills-section" class="nav-link">Habilidades</a>
+                <a href="#contact-section" class="nav-link">Contacto</a>
+            </nav>
+
+            <button id="btn-mobile-menu" class="btn-mobile-menu" aria-label="Menú">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-nav-menu" class="mobile-nav-menu hidden">
+            <a href="#about-section" class="nav-link">Sobre Mí</a>
+            <a href="#projects-section" class="nav-link">Proyectos</a>
+            <a href="#studies-section" class="nav-link">Estudios</a>
+            <a href="#skills-section" class="nav-link">Habilidades</a>
+            <a href="#contact-section" class="nav-link">Contacto</a>
+        </div>
+    </header>
+
+    <main class="app-main-content">
+        <section id="about-section" class="about-section">
+            <div class="about-container">
+                <div class="about-image-wrapper">
+                    <div class="about-image-frame">
+                        <img id="profile-image" src="foto_curriculum.jpeg" alt="Foto de perfil" class="about-image">
+                    </div>
+                    <div class="about-social-links" id="social-links-container">
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="about-badge" id="about-badge">Desarrollador Web</span>
+                    <h1 class="about-name" id="about-name">Cargando...</h1>
+                    <h2 class="about-title" id="about-title"></h2>
+                    <p class="about-description" id="about-description"></p>
+                    <div class="about-actions">
+                        <a href="#projects-section" class="btn btn-primary">Ver Proyectos</a>
+                        <a href="#contact-section" class="btn btn-secondary">Contactar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects-section" class="projects-section">
+            <div class="section-header">
+                <h2 class="section-title">Proyectos</h2>
+                <p class="section-description" id="projects-subtitle">Proyectos de desarrollo web</p>
+                <div class="filter-tabs" id="project-filter-tabs">
+                    <button class="filter-tab active" data-filter="all">Todos</button>
+                </div>
+            </div>
+            <div id="projects-grid" class="projects-grid">
+                <div class="loading-spinner-container">
+                    <div class="spinner"></div>
+                    <p>Cargando proyectos...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="studies-section" class="studies-section">
+            <div class="section-header">
+                <h2 class="section-title">Estudios</h2>
+                <p class="section-description">Mi formación académica y profesional</p>
+            </div>
+            <div id="studies-timeline" class="studies-timeline">
+                <div class="loading-spinner-container">
+                    <div class="spinner"></div>
+                    <p>Cargando estudios...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills-section" class="skills-section">
+            <div class="section-header">
+                <h2 class="section-title">Habilidades</h2>
+                <p class="section-description">Profesionales y técnicas</p>
+            </div>
+            <div id="skills-container" class="skills-container">
+                <div class="loading-spinner-container">
+                    <div class="spinner"></div>
+                    <p>Cargando habilidades...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates-section" class="certificates-section">
+            <div class="section-header">
+                <h2 class="section-title">Certificados</h2>
+                <p class="section-description">Diplomas y certificados disponibles para ver o descargar</p>
+            </div>
+            <div class="certificates-grid">
+                <a class="certificate-card" href="certificate-ia-responsable-y-prompting-para-estudiantes-ilerna.pdf" target="_blank" rel="noopener noreferrer">
+                    <div class="certificate-icon">🎓</div>
+                    <h3>IA Responsable y Prompting</h3>
+                    <p>Certificado de Ilerna</p>
+                    <span>Ver PDF</span>
+                </a>
+                <a class="certificate-card" href="aiskills4emp-diploma-jjrgthelaw@gmail.com.pdf" target="_blank" rel="noopener noreferrer">
+                    <div class="certificate-icon">📜</div>
+                    <h3>AI Skills 4 Emp</h3>
+                    <p>Diploma de formación</p>
+                    <span>Ver PDF</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="contact-section" class="contact-section">
+            <div class="contact-container">
+                <div class="section-header">
+                    <h2 class="section-title">Contacto</h2>
+                    <p class="section-description">Estemos en contacto</p>
+                </div>
+                <div id="contact-info" class="contact-info">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="logo-text" id="footer-logo">Juan<span class="text-accent">José</span></span>
+                <p id="footer-tagline" class="footer-desc"></p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#about-section">Sobre Mí</a></li>
+                    <li><a href="#projects-section">Proyectos</a></li>
+                    <li><a href="#studies-section">Estudios</a></li>
+                    <li><a href="#skills-section">Habilidades</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact" id="footer-contact">
+                <h4>Contacto</h4>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p id="footer-copy"></p>
+        </div>
+    </footer>
+
+    <div id="toast-container" class="toast-container"></div>
+    <script src="app.js"></script>
+</body>
+</html>
