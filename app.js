@@ -43,7 +43,7 @@ const DEFAULT_DB = {
             link: "https://juanriosg1.github.io/curriclum_desarrollador_web/",
             github: "https://github.com/JUANRIOSG1/curriclum_desarrollador_web",
             gradient: "linear-gradient(135deg, #581c87, #4c1d95)",
-            image: "cv_pagina-web.png",
+            image: "cv_Juan_Jose_Rios_Gangas.png",
             icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`
         },
         {
@@ -55,7 +55,7 @@ const DEFAULT_DB = {
             link: "https://juanriosg1.github.io/calculator/",
             github: "https://github.com/JUANRIOSG1/calculator",
             gradient: "linear-gradient(135deg, #0f172a, #1e293b)",
-            image: "Calculator.png",
+            image: "calculadora.png",
             icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`
         }
     ],
