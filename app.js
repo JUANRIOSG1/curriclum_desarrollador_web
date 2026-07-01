@@ -4,7 +4,10 @@
 // To reset data: localStorage.removeItem('portfolio_db')
 // ==========================================================================
 
+const DB_VERSION = 2;
+
 const DEFAULT_DB = {
+    version: DB_VERSION,
     personalInfo: {
         name: "Juan José Ríos Gangas",
         title: "Desarrollador web junior",
@@ -92,11 +95,48 @@ const DEFAULT_DB = {
 const DB = {
     data: null,
 
+    normalize(data) {
+        const base = JSON.parse(JSON.stringify(DEFAULT_DB));
+        const normalized = {
+            ...base,
+            ...data,
+            personalInfo: {
+                ...base.personalInfo,
+                ...(data?.personalInfo || {})
+            },
+            projects: Array.isArray(data?.projects)
+                ? data.projects.map((proj, index) => {
+                    const baseProj = base.projects?.[index] || {};
+                    return {
+                        ...baseProj,
+                        ...proj,
+                        image: proj?.image || baseProj.image || '',
+                        icon: proj?.icon || baseProj.icon || '',
+                        technologies: Array.isArray(proj?.technologies) ? proj.technologies : baseProj.technologies || []
+                    };
+                })
+                : base.projects,
+            studies: Array.isArray(data?.studies)
+                ? data.studies.map((item, index) => ({ ...(base.studies?.[index] || {}), ...item }))
+                : base.studies,
+            skills: Array.isArray(data?.skills) ? data.skills : base.skills
+        };
+
+        return normalized;
+    },
+
     init() {
         const saved = localStorage.getItem('portfolio_db');
         if (saved) {
             try {
-                this.data = JSON.parse(saved);
+                const parsed = JSON.parse(saved);
+                if (parsed?.version !== DB_VERSION) {
+                    console.warn("DB antigua, cargando datos por defecto");
+                    this.seed();
+                    return;
+                }
+                this.data = this.normalize(parsed);
+                localStorage.setItem('portfolio_db', JSON.stringify(this.data));
                 return;
             } catch (e) {
                 console.warn("DB corrupta, cargando datos por defecto");
@@ -106,7 +146,7 @@ const DB = {
     },
 
     seed() {
-        this.data = JSON.parse(JSON.stringify(DEFAULT_DB));
+        this.data = this.normalize(DEFAULT_DB);
         localStorage.setItem('portfolio_db', JSON.stringify(this.data));
     },
 
