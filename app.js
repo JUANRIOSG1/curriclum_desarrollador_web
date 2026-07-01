@@ -18,7 +18,6 @@ const DEFAULT_DB = {
             { name: "GitHub", url: "https://github.com/JUANRIOSG1", icon: "gh" },
             { name: "LinkedIn", url: "https://linkedin.com/in/juan-jose-rios-gangas-8aa8a7308", icon: "li" },
             { name: "Instagram", url: "https://instagram.com/juanjose_rios_", icon: "ig" },
-            { name: "Facebook", url: "https://facebook.com/Juan José Ríos Gangas", icon: "fb" }
         ]
     },
     experience: [],
@@ -41,33 +40,24 @@ const DEFAULT_DB = {
             description: "Sitio web portfolio con diseño oscuro moderno, animaciones CSS, modo responsive y contenido gestionado desde base de datos local.",
             technologies: ["HTML", "CSS", "JavaScript", "localStorage"],
             category: "frontend",
-            link: "#",
-            github: "https://github.com/JUANRIOSG1/curriclum_desarrollador_web/tree/main/curriculum_desarrollador_web",
+            link: "https://juanriosg1.github.io/curriclum_desarrollador_web/",
+            github: "https://github.com/JUANRIOSG1/curriclum_desarrollador_web",
             gradient: "linear-gradient(135deg, #581c87, #4c1d95)",
+            image: "cv_Juan_Jose_Rios_Gangas.png",
             icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`
         },
         {
             id: 2,
-            title: "Aplicación CRUD",
-            description: "Aplicación web con operaciones CRUD conectada a base de datos, desarrollada como parte del módulo de Desarrollo Web en Entorno Servidor.",
-            technologies: ["Java", "MySQL", "HTML", "CSS"],
-            category: "backend",
-            link: "#",
-            github: "https://github.com/JUANRIOSG1",
-            gradient: "linear-gradient(135deg, #0f172a, #1e293b)",
-            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>`
-        },
-        {
-            id: 3,
-            title: "TFG-Curriculum de Arquitecto",
-            description: "Aplicacion web para gestionar el curriculum de un arquitecto.Con todos los apartados de un curriculum y con un diseño moderno y responsive.",
-            technologies: ["TypeScript", "CSS", "JavaScript", "HTML"],
+            title: "Calculadora",
+            description: "Calculadora web con diseño moderno y responsive, desarrollada como proyecto personal para practicar JavaScript y CSS.",
+            technologies: ["HTML", "CSS", "JavaScript"],
             category: "frontend",
-            link: "#",
-            github: "https://github.com/JUANRIOSG1/tfg-arquitecto",
-            gradient: "linear-gradient(135deg, #1e3a8a, #3b82f6)",
-            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 6H4"/><path d="M20 6L16 10L12 6L8 10L4 6"/><path d="M4 18H20"/></svg>`
-        },
+            link: "https://juanriosg1.github.io/calculator/",
+            github: "https://github.com/JUANRIOSG1/calculator",
+            gradient: "linear-gradient(135deg, #0f172a, #1e293b)",
+            image: "Calculadora.png",
+            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`
+        }
     ],
     studies: [
         {
@@ -76,14 +66,14 @@ const DEFAULT_DB = {
             institution: "ILerna Formación",
             year: "Julio 2023 - Julio 2025",
             description: "Formación profesional de grado superior en desarrollo de aplicaciones web, abarcando frontend, backend, bases de datos y despliegue de aplicaciones.",
-            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`
+            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2.5 3 6 3s6-1 6-3v-5"/></svg>`  
         },
         {
             id: 2,
             degree: "Bachillerato en Humanidades",
             institution: "Colegio Benavente",
             year: "Septiembre 2019 - Julio 2022",
-            description: "Bachillerato en la modalidad de Humanidades, proporcionando una base sólida en comunicación, historia y lenguas.",
+            description: "Bachillerato en la modalidad de Humanidades, proporcionando una base sólida en comunicación, historia y lenguas.", 
             icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2.5 3 6 3s6-1 6-3v-5"/></svg>`
         }
     ],
@@ -265,7 +255,10 @@ function renderProjectsGrid() {
         card.innerHTML = `
             <div class="project-img-wrapper">
                 <div class="project-img-bg" style="background: ${proj.gradient};">
-                    ${proj.icon}
+                    ${proj.image
+                        ? `<img class="project-img" src="${proj.image}" alt="Captura de ${proj.title}">`
+                        : `<div class="project-img-icon">${proj.icon}</div>`
+                    }
                 </div>
             </div>
             <div class="project-info">
